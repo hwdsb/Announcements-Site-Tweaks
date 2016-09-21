@@ -31,7 +31,7 @@ add_action( 'admin_init', 'remove_dashboard_meta' );
 /* Add the Announcements taxonomy to the Presentation Taxonomy Type, on the Slides CPT. */
 
 function set_default_object_terms( $post_id, $post ) {
-    if ( 'publish' === $post->post_status && $post->post_type === 'slides' ) {
+    if ( $post->post_type === 'slides' ) {
         $defaults = array(
                 'presentation' => array( 'announcements' )
                 );
