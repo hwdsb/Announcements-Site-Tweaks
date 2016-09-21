@@ -49,13 +49,13 @@ function set_default_object_terms( $post_id, $post ) {
 /* Remove all Dashboard menus for Authors to simplify things further */
 function remove_menus(){
   if( !current_user_can('manage_options')){
-  remove_menu_page( 'edit.php' );								//Posts
-  remove_menu_page( 'upload.php' );							//Media
+  remove_menu_page( 'edit.php' );				//Posts
+  remove_menu_page( 'upload.php' );				//Media
   remove_menu_page( 'edit-comments.php' );			//Comments
-  remove_menu_page( 'profile.php' );						//Comments
-  remove_menu_page( 'users.php' );							//Users
-  remove_menu_page( 'tools.php' );							//Tools
-  remove_menu_page( 'options-general.php' );		//Settings
+  remove_menu_page( 'profile.php' );				//Profile
+  remove_menu_page( 'users.php' );				//Users
+  remove_menu_page( 'tools.php' );				//Tools
+  remove_menu_page( 'options-general.php' );			//Settings
   remove_menu_page( 'admin.php?page=threewp_broadcast' );    	//Broadcast Menu
 } 
 }
@@ -79,7 +79,7 @@ function remove_my_post_metaboxes() {
 if( !current_user_can('manage_options')){
 remove_meta_box( 'presentationdiv','slides','side' );   // Presentation Taxonomy Metabox
 remove_meta_box( 'pageparentdiv','slides','side' );     // Parent Attribute Metabox
-remove_meta_box( 'slide-settings','slides','normal' );  // Reveal Slide Metabox
+// remove_meta_box( 'slide-settings','slides','normal' );  // Reveal Slide Metabox (todo: removing this kills the slide title)
 remove_meta_box( 'postimagediv','slides','side' );      // Featured Image Metabox
 }
 }
