@@ -94,9 +94,3 @@ function hwdsbpres_custom_admin_notice() { ?>
 	
 <?php }
 add_action('admin_notices', 'hwdsbpres_custom_admin_notice');
-
-/* Add Jetpack ShortURL support to the Slides post type */
-add_action('init', 'hwdsbshorturl_custom_init');
-function hwdsbshorturl_custom_init() {
-    add_post_type_support( 'slides', 'shortlinks' );
-}
